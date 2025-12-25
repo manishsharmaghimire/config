@@ -49,7 +49,7 @@ management:
 
 # Custom Application Properties
 accounts:
-  message: "Welcome to abc accounts related prod APIs"
+  message: "Welcome to abc accounts related production APIs"
   contactDetails:
     name: "Reine Aishwarya - Product Owner"
     email: "aishwarya@abc.com"
