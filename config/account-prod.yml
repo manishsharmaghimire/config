@@ -44,7 +44,7 @@ accounts:
   message: "Welcome to abc accounts related prod APIs"
   contactDetails:
     name: "Reine Aishwarya - Product Owner"
-    email: "aishwarya@eazybank.com"
+    email: "aishwarya@abc.com"
   onCallSupport:
     - "(453) 392-4829"
     - "(236) 203-0384"
