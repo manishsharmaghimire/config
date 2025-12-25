@@ -1,7 +1,6 @@
 spring:
   application:
     name: account
-
   datasource:
     url: jdbc:mysql://mysql:3306/accountdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
@@ -27,19 +26,21 @@ spring:
 
 server:
   port: 8084
-  
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "health,info,refresh,busrefresh"
   endpoint:
     health:
       show-details: always
     refresh:
       enabled: true
+    busrefresh:
+      enabled: true
 
+# Application properties
 accounts:
   message: "Welcome to abc accounts related prod APIs"
   contactDetails:
