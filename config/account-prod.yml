@@ -12,6 +12,7 @@ spring:
       minimum-idle: 5
       max-lifetime: 300000
       connection-test-query: SELECT 1
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -25,19 +26,19 @@ spring:
 
 server:
   port: 8084
+  servlet:
+    context-path: /  # Explicitly set to root
 
 management:
   endpoints:
     web:
       base-path: /actuator
       exposure:
-        include: "health,info,refresh,busrefresh"
+        include: "health,info,refresh"
   endpoint:
     health:
       show-details: always
-    refresh:
-      enabled: true
-    busrefresh:
+    info:
       enabled: true
 
 accounts:
