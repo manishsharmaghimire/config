@@ -2,7 +2,7 @@ spring:
   application:
     name: account
   datasource:
-    url: jdbc:mysql://mysql:3306/accountdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    url: jdbc:mysql://mysql-account:3306/accountdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -29,18 +29,25 @@ server:
   servlet:
     context-path: /  # Explicitly set to root
 
+# Actuator Configuration
 management:
   endpoints:
     web:
       base-path: /actuator
       exposure:
-        include: "health,info,refresh"
+        include: "*"  # Expose all endpoints
   endpoint:
     health:
       show-details: always
+      show-components: always
     info:
       enabled: true
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
 
+# Custom Application Properties
 accounts:
   message: "Welcome to abc accounts related prod APIs"
   contactDetails:
@@ -49,3 +56,12 @@ accounts:
   onCallSupport:
     - "(453) 392-4829"
     - "(236) 203-0384"
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.abc: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
