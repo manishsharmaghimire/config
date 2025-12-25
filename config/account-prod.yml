@@ -12,7 +12,6 @@ spring:
       minimum-idle: 5
       max-lifetime: 300000
       connection-test-query: SELECT 1
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -30,6 +29,7 @@ server:
 management:
   endpoints:
     web:
+      base-path: /actuator
       exposure:
         include: "health,info,refresh,busrefresh"
   endpoint:
@@ -40,7 +40,6 @@ management:
     busrefresh:
       enabled: true
 
-# Application properties
 accounts:
   message: "Welcome to abc accounts related prod APIs"
   contactDetails:
