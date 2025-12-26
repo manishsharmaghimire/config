@@ -24,8 +24,6 @@ spring:
         jdbc:
           time_zone: UTC
 
- 
-
   cloud:
     config:
       enabled: true
@@ -40,11 +38,10 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "*"          # expose all actuator endpoints
   endpoint:
     health:
       show-details: always
-
 
 logging:
   level:
