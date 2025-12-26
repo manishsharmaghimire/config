@@ -50,6 +50,7 @@ management:
     web:
       exposure:
         include: "*"
+      base-path: /actuator  # 
 
 # ✅ OK: custom properties loaded correctly AFTER name fix
 cards:
@@ -60,3 +61,4 @@ cards:
   onCallSupport:
     - "(453) 392-4829"
     - "(236) 203-0384"
+
