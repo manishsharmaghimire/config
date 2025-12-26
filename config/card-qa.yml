@@ -37,16 +37,14 @@ spring:
         multiplier: 1.1
 
 management:
-  server:
-    port: 9095
   endpoints:
     web:
-      base-path: /actuator
       exposure:
         include: "*"
   endpoint:
     health:
       show-details: always
+
 
 logging:
   level:
