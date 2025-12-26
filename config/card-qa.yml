@@ -38,7 +38,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"          # expose all actuator endpoints
+        include: "*"
   endpoint:
     health:
       show-details: always
