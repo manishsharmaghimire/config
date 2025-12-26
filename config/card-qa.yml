@@ -1,9 +1,9 @@
 spring:
   application:
     name: card-service
-  
+
   datasource:
-    url: jdbc:mysql://mysql-card:4306/carddb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    url: jdbc:mysql://mysql-card:3306/carddb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -13,7 +13,7 @@ spring:
       minimum-idle: 5
       idle-timeout: 600000
       max-lifetime: 1800000
-      
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -42,3 +42,12 @@ management:
       exposure:
         include: health,info,metrics
 
+# Custom Card Service Properties
+cards:
+  message: "Welcome to abc card related production APIs"
+  contactDetails:
+    name: "Card Service Support Team"
+    email: "cards-support@abc.com"
+  onCallSupport:
+    - "(453) 392-4829"
+    - "(236) 203-0384"
