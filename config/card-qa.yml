@@ -1,12 +1,10 @@
 spring:
   application:
-    # ✅ FIXED: application name MUST match
-    # docker-compose -> SPRING_APPLICATION_NAME=card
-    # config file name -> card-qa.yml
-    name: card
+    # ✅ Matches Docker container contextually
+    name: card-service
 
   datasource:
-    # ✅ OK: service name used because MySQL is inside Docker network
+    # ✅ Docker network service name remains mysql-card
     url: jdbc:mysql://mysql-card:3306/carddb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
     password: root
@@ -25,10 +23,7 @@ spring:
     show-sql: true
     properties:
       hibernate:
-        # ❌ REMOVED FIX:
-        # dialect: org.hibernate.dialect.MySQL8Dialect
-        # Reason: Hibernate 6 auto-detects MySQL 8 (warning was coming)
-
+        # ✅ Removed explicit MySQL8Dialect
         format_sql: true
         jdbc:
           time_zone: UTC
@@ -36,8 +31,7 @@ spring:
 server:
   port: 9095
   servlet:
-    # ✅ OK: root context, no extra prefix needed
-    context-path: /
+    context-path: /  # ✅ Root context
 
 logging:
   level:
@@ -49,16 +43,14 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
-      base-path: /actuator  # 
+        include: "*"  # ✅ Expose all endpoints
+      # ❌ Removed base-path to fix 404 actuator
 
-# ✅ OK: custom properties loaded correctly AFTER name fix
 cards:
-  message: "Welcome to abc card related production APIs"
+  message: "Welcome to abc card related QA APIs"
   contactDetails:
     name: "Card Service Support Team"
     email: "cards-support@abc.com"
   onCallSupport:
     - "(453) 392-4829"
     - "(236) 203-0384"
-
