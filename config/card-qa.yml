@@ -39,9 +39,13 @@ management:
     web:
       exposure:
         include: "*"
+      base-path: /actuator  # Add this line
   endpoint:
     health:
       show-details: always
+  health:
+    db:
+      enabled: true
 
 logging:
   level:
@@ -53,3 +57,4 @@ cards:
   contactDetails:
     name: "Card Config Support Team"
     email: "cards-config-support@abc.com"
+
