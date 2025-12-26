@@ -53,8 +53,9 @@ logging:
     org.springframework.web: DEBUG
 
 cards:
-  message: "Welcome to abc card QA APIs from Config Server"
+  message: "Welcome to abc card QA APIs from Configer Server"
   contactDetails:
     name: "Card Config Support Team"
     email: "cards-config-support@abc.com"
+
 
