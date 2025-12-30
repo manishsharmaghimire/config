@@ -25,7 +25,7 @@ spring:
         jdbc:
           time_zone: UTC
 
-  rabbitmq:                      # ✅ MOVED TO CORRECT PLACE
+  rabbitmq:
     host: rabbitmq
     port: 5672
     username: guest
@@ -69,4 +69,4 @@ logging:
     org.springframework.web: INFO
     com.abc: DEBUG
     org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE   # ✅ FIXED
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
