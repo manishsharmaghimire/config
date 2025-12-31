@@ -56,7 +56,7 @@ management:
     prometheus:
       enabled: true
   health:
-    validate-group-membership: false   # prevents startup failure due to missing readiness contributor
+    validate-group-membership: false  # Prevents startup failure due to missing readiness contributor
 
 accounts:
   message: "Welcome to abc accounts related production APIs"
@@ -67,10 +67,3 @@ accounts:
     - "(453) 392-4829"
     - "(236) 203-0384"
 
-logging:
-  level:
-    root: INFO
-    org.springframework.web: INFO
-    com.abc: DEBUG
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
