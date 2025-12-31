@@ -7,63 +7,30 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-    hikari:
-      connection-timeout: 30000
-      maximum-pool-size: 10
-      minimum-idle: 5
-      max-lifetime: 300000
-      connection-test-query: SELECT 1
 
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-    database-platform: org.hibernate.dialect.MySQLDialect
-    properties:
-      hibernate:
-        format_sql: true
-        jdbc:
-          time_zone: UTC
 
   rabbitmq:
     host: rabbitmq
     port: 5672
     username: guest
     password: guest
-    virtual-host: /
 
 server:
   port: 8084
-  servlet:
-    context-path: /
 
 management:
   endpoints:
     web:
-      base-path: /actuator
       exposure:
         include: "*"
-  endpoint:
-    health:
-      show-details: always
-      show-components: always
-      readinessState:
-        enabled: true
-    info:
-      enabled: true
-    metrics:
-      enabled: true
-    prometheus:
-      enabled: true
   health:
-    validate-group-membership: false  # Prevents startup failure due to missing readiness contributor
-
-accounts:
-  message: "Welcome to abc accounts related production APIs"
-  contactDetails:
-    name: "Reine Aishwarya - Product Owner"
-    email: "aishwarya@abc.com"
-  onCallSupport:
-    - "(453) 392-4829"
-    - "(236) 203-0384"
-
+    group:
+      readiness:
+        include: db,rabbit
+      liveness:
+        include: ping
+    validate-group-membership: false
