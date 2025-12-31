@@ -51,7 +51,8 @@ cards:
   message: "Welcome to abc card QA APIs from Configers Server"
   contactdetails:
     name: "Card Config Support Team"
-    email: "cards-config-support@abcd.com"
+    email: "cards-config-support@abcde.com"
+
 
 
 
