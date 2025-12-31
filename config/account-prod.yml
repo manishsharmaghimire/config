@@ -27,13 +27,7 @@ management:
     web:
       exposure:
         include: "*"
-  health:
-    group:
-      readiness:
-        include: db,rabbit
-      liveness:
-        include: ping
-    validate-group-membership: false
+  
 
 # -------------------- Info / Contact --------------------
 info:
