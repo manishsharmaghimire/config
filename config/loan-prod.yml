@@ -3,7 +3,7 @@ spring:
     name: loan
 
   datasource:
-    url: jdbc:mysql://mysql-loan:3306/loandb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    url: jdbc:mysql://mysql-loan:5306/loandb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
