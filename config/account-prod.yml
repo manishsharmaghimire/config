@@ -34,3 +34,10 @@ management:
       liveness:
         include: ping
     validate-group-membership: false
+
+# -------------------- Info / Contact --------------------
+info:
+  contact:
+    name: Manish Sharma
+    email: manish@example.com
+    phone: "+977-98XXXXXXXX"
