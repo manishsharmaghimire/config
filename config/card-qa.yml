@@ -48,10 +48,11 @@ logging:
     root: INFO
     org.springframework.web: DEBUG
 cards:
-  message: "Welcome to abc card QA APIs from Configer Server"
+  message: "Welcome to abc card QA APIs from Configers Server"
   contactdetails:
     name: "Card Config Support Team"
     email: "cards-config-support@abc.com"
+
 
 
 
