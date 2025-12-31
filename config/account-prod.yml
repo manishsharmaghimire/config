@@ -47,12 +47,16 @@ management:
     health:
       show-details: always
       show-components: always
-    info:
+  health:
+    probes:
       enabled: true
-    metrics:
-      enabled: true
-    prometheus:
-      enabled: true
+  validate-group-membership: false   # disables invalid group validation
+  health:
+    group:
+      readiness:
+        include: ["db", "rabbit", "diskSpace"]  # health checks considered for readiness
+      liveness:
+        include: ["diskSpace"]                  # health checks considered for liveness
 
 accounts:
   message: "Welcome to abc accounts related production APIs"
