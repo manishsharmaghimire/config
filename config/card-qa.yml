@@ -1,7 +1,7 @@
+
 spring:
   application:
     name: card
-
   datasource:
     url: jdbc:mysql://mysql-card:4306/carddb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
@@ -13,7 +13,6 @@ spring:
       minimum-idle: 5
       idle-timeout: 600000
       max-lifetime: 1800000
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -23,7 +22,6 @@ spring:
         format_sql: true
         jdbc:
           time_zone: UTC
-
   cloud:
     config:
       enabled: true
@@ -33,31 +31,25 @@ spring:
         max-attempts: 6
         max-interval: 2000
         multiplier: 1.1
-
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-      base-path: /actuator  # Add this line
+      base-path: /actuator
   endpoint:
     health:
       show-details: always
   health:
     db:
       enabled: true
-
 logging:
   level:
     root: INFO
     org.springframework.web: DEBUG
-
 cards:
   message: "Welcome to abc card QA APIs from Configer Server"
   contactdetails:
     name: "Card Config Support Team"
     email: "cards-config-support@abc.com"
-
-
-
-
+EOL
