@@ -4,17 +4,17 @@ spring:
 
 server:
   port: 9999
-  enable-self-preservation: true
 
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: false   # server does NOT register itself
+    fetch-registry: false          # server does NOT fetch registry
     service-url:
-      defaultZone: http://eureka-server:9999/eureka/
+      defaultZone: http://eureka-server:9999/eureka/  # used by clients
+
   server:
     enable-self-preservation: true
     wait-time-in-ms-when-sync-empty: 0
 
-
-
+  instance:
+    hostname: eurekaserver   # container name or DNS name in Docker network
