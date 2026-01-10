@@ -2,6 +2,9 @@ spring:
   application:
     name: loan
 
+  lifecycle:
+    timeout-per-shutdown-phase: 30s   # time to finish ongoing requests
+
   datasource:
     url: jdbc:mysql://mysql-loan:3306/loandb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
@@ -25,6 +28,7 @@ spring:
 
 server:
   port: 8090
+  shutdown: graceful   # 🔹 enables graceful shutdown
 
 management:
   endpoints:
@@ -32,6 +36,7 @@ management:
       exposure:
         include: "*"
   endpoint:
+    shutdown:
+      enabled: true     # 🔹 allows shutdown endpoint
     health:
       show-details: always
-
